@@ -1,12 +1,5 @@
 package nsuproject.diseasenotification.koreaNews;
 
-import lombok.RequiredArgsConstructor;
-import nsuproject.diseasenotification.dto.KoreaNewsRequestDto;
-import nsuproject.diseasenotification.service.KoreaNewsService;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package nsuproject.diseasenotification.service;
+package nsuproject.diseasenotification.koreaNews;
 
 import lombok.RequiredArgsConstructor;
 import nsuproject.diseasenotification.dto.KoreaNewsRequestDto;
@@ -32,7 +32,6 @@ public class KoreaNewsService {
         return koreaNewsRepository.findAll();
     }
 
-
     // Controller 가져온 크롤링 데이터 URL
     // URL 접근 Jsoup로 필터
     // 데이터 Set + List 형태로 DB에 저장
@@ -52,7 +51,7 @@ public class KoreaNewsService {
                 news.setTitle(el.text());
                 news.setUrl(el.attr("href"));
                 //개발일지 - URL 정보를 가져오는 문제점 Elements의 attr 속성을 찾아서 해결
-
+                //DB에 최신화되는 정보를 넣어줘야 하기 떄문에 Controller에 타이머 필요
                 koreaNewsRepository.save(news);
             }
 
