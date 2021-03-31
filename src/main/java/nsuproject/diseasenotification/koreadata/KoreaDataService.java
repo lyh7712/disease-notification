@@ -1,4 +1,4 @@
-package nsuproject.diseasenotification.koreaData;
+package nsuproject.diseasenotification.koreadata;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;

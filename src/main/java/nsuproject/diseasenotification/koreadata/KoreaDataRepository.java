@@ -1,4 +1,4 @@
-package nsuproject.diseasenotification.koreaData;
+package nsuproject.diseasenotification.koreadata;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
