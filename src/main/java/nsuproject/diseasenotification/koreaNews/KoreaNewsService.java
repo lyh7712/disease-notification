@@ -60,7 +60,5 @@ public class KoreaNewsService {
             e.printStackTrace();
         }
 
-
     }
-
 }
