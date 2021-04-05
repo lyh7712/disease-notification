@@ -6,6 +6,8 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class WorldService {
@@ -32,5 +34,9 @@ public class WorldService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public List<WorldData> findAllData() {
+        return repository.findAll();
     }
 }

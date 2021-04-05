@@ -1,23 +1,25 @@
 package nsuproject.diseasenotification.worldnews;
 
-import nsuproject.diseasenotification.worlddata.WorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/jpa")
 public class WorldNewsController {
 
     @Autowired
     private WorldNewsService service;
 
-    @GetMapping("/worldnews")
-    public void getNews() {
 
+    @GetMapping("/world/news")
+    public List<WorldNews> findAllNews() {
         String url = "https://www.who.int/emergencies/disease-outbreak-news";
 
         service.insertNews(url);
+
+        return service.findAllData();
     }
+
 }

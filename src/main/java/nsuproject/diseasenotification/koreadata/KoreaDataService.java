@@ -5,6 +5,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Service
 public class KoreaDataService {
@@ -32,6 +35,9 @@ public class KoreaDataService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    public List<KoreaData> findAllData() {
+        return repository.findAll();
     }
 }

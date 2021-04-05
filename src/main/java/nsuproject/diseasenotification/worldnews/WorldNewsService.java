@@ -1,12 +1,15 @@
 package nsuproject.diseasenotification.worldnews;
 
 import lombok.RequiredArgsConstructor;
+import nsuproject.diseasenotification.worlddata.WorldData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -37,5 +40,9 @@ public class WorldNewsService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public List<WorldNews> findAllData() {
+        return repository.findAll();
     }
 }
