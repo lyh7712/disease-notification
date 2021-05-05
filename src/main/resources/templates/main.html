@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="질병알리미">
+    <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
+    <meta property="og:description" content="전염병 알리미">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
+
+    <script src="ajax.js"></script>
+    <link rel="stylesheet" href="./css//index.css">
+    <style>
+        a:visited {
+            color: #224ABE;
+            text-decoration: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            cursor: default;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #navbar {
+            max-width: 1600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 5px;
+            border-bottom: 1px solid lightslategray;
+        }
+
+        #sidebar {
+            position: fixed;
+            height: 500px;
+        }
+
+        #sidebar .sidebar-title {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        #sidebar li {
+            margin-left: 20px;
+        }
+
+        #main {
+            max-width: 1600px;
+        }
+
+        .main-container { /*가운데 정렬*/
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        div ul {
+            background-color: rgb(236, 233, 233);
+            border-top: 1px solid;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            border-left: 1px solid;
+            padding: 10px;
+        }
+
+        .container-board { /*간격 조정*/
+            margin-top: 20px;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fontbold {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .card-header { /*너비*/
+            width: 100%;
+        }
+
+
+        .card-header h5 { /*h5일때 박스 하단 px,색 */
+            margin: 0;
+            border-bottom: 1px solid lightslategrey;
+        }
+
+
+        .card-header h2 { /*h5일때 박스 하단 px,색 */
+            margin: 0;
+            border-bottom: 3px solid black;
+        }
+
+
+        .card-box-korea,
+        .card-box-graph,
+        .card-box-world { /*박스*/
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            border: 3px solid black;
+            width: 50%;
+            height: 100%;
+        }
+
+        .card-body h6 { /* h6일때 중간정렬*/
+            text-align: center;
+        }
+
+        div h3 {
+            text-align: center;
+        }
+
+        .body-top {
+            text-align: center;
+
+        }
+
+        .body-bottom {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .first-count,
+        .second-count {
+            text-align: center;
+        }
+
+        .news-body {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .news-box {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .news-card {
+            border: 3px solid black;
+            width: 60%;
+            padding: 16px;
+            margin: 10px;
+        }
+
+        ol li {
+            text-align: left;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $.ajax({
+                // https://yts.mx/api/v2/list_movies.json?sort_by=download_count
+                url: "http://localhost:8080/korea/news",
+                type: "GET",
+                success: function (data) {
+                    // console.log((data[0].title));
+                    // console.log((data[0].url));
+                    console.log(data);
+                    // let getData = data[0];
+                    // console.log(getData.length);
+                    // for(let i = 0; i < getData.length; i++) {
+                    //
+                    // }
+                    // makeNews()
+                }
+            })
+        })
+
+        function makeNews(title, url) {
+            let newsForm =
+                `<div class="card-new-header">
+                            <h3>
+                                <a href="${url}">Nearly
+                                    ${title}</a>
+                            </h3>
+                            <span>3 May 2021</span>
+                        </div>`;
+            $("#card").append(newsForm);
+        }
+    </script>
+
+    <title>전염병알리미</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav id="navbar">
+    <h1 class="navbar-title">
+        <i class="fas fa-head-side-cough"></i>
+        전염병 알리미
+    </h1>
+</nav>
+
+<!-- Wrapper -->
+<div id="sidebar">
+    <ul class="sidebar-ul">
+        <div>
+            <h4 id="clock" style="color:black;">00:00</h4>
+            <script src="day.js"></script>
+        </div>
+        <div class="sidebar-title">
+            <i class="fas fa-chart-area"></i>
+            <a href="main.html" class="fontbold">메인 홈 화면</a>
+        </div>
+        <div class="sidebar-title fontbold">
+            국내
+        </div>
+        <li class="sidebar-item"><a href="kocase.html">전염병확인자</a></li>
+        <li class="sidebar-item"><a href="./kovac.html">백신</a></li>
+        <li class="sidebar-item"><a href="./konews.html">뉴스</a></li>
+        <div class="sidebar-title fontbold">
+            해외
+        </div>
+        <li class="sidebar-item"><a href="./wocase.html">전염병확인자</a></li>
+        <li class="sidebar-item"><a href="wonews.html">뉴스</a></li>
+        <li class="sidebar-item"><a href="./wosearch.html">국가별 감염병 예방정보</a></li>
+        <div class="sidebar-title fontbold">
+            <a href="./safe.html">안전수칙 및 소식</a>
+        </div>
+</div>
+</ul>
+</div>
+
+<!-- Main -->
+<div id="main">
+    <div class="main-container">
+        <div class="container-board">
+            <!-- 국내 현황 -->
+            <div class="card-box-korea">
+                <div class="card-header">
+                    <h2>국내현황</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Top -->
+                    <div class="body-top">
+                        <h3>총 확진자</h3>
+                        <div class="top-count">
+                            <span>123,728명</span>
+
+                        </div>
+                    </div>
+                    <!-- Bottom -->
+                    <div class="body-bottom">
+                        <div class="bottom">
+                            <h3>사망자</h3>
+                            <div class="first-count">
+                                <div>1,834명</div>
+
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h3>완치자</h3>
+                            <div class="second-count">
+                                <div>113,356명</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="body-bottom">
+                        <div class="bottom">
+                        </div>
+                        <div class="bottom">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-box-korea">
+                <div class="card-header">
+                    <h2>세계현황</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Top -->
+                    <div class="body-top">
+                        <h3>총 확진자</h3>
+                        <div class="top-count">
+                            <span id="data">153,577,431명</span>
+                            <!--id="WorldTotal"-->
+
+                        </div>
+                    </div>
+                    <!-- Bottom -->
+                    <div class="body-bottom">
+                        <div class="bottom">
+                            <div class="first-count">
+                                <h3>사망자</h3></div>
+                            <div class="first-count">
+                                <div>3,218,196명</div>
+                                <!--id="totalDead"-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body-top"><br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-box">
+        <div class="news-body">
+            <!-- 국내 뉴스 -->
+            <div class="news-card">
+                <div class="card-header">
+                    <h2>국내 주요 뉴스</h2>
+                </div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-new-header">
+                            <h3>
+                                <a href="">7일부터 편의점에서 코로나19 자가검사키트 판매</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-new-header">
+                            <h3>
+                                <a href="">"코로나19 집단면역 도달 어렵다…결국 독감처럼 함께 살아야"(종합)</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-new-header">
+                            <h3>
+                                <a href="">"코로나19 집단면역 도달 어려워…토착화돼 함께 살아야"</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="news-source">
+                        <span>출처</span>
+                        <span>네이버 뉴스 "코로나"검색(실시간)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 해외 떠오르는 질병 -->
+            <div class="news-card">
+                <div class="card-header">
+                    <h2>해외 주요 뉴스</h2>
+                </div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-new-header">
+                            <h3>
+                                <a href="https://www.who.int/csr/don/25-october-2020-mayaro-fever-french-guiana-france/en/">Stephen
+                                    Karanja: Kenyan anti-vaccine doctor dies from Covid-19</a>
+                            </h3>
+                            <span>3 May 2021</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-new-header">
+                            <h3>
+                                <a href="https://www.who.int/csr/don/13-october-2020-oropouche-french-guiana-france/en/">Nearly
+                                    a third of Americans are fully vaccinated. But one thing could still delay our
+                                    return to normal</a>
+                            </h3>
+                            <span>3 May 2021</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-new-header">
+                            <h3>
+                                <a href="https://www.who.int/csr/don/01-october-2020-monkeypox-drc/en/">Monkeypox –
+                                    Democratic Republic of the Congo</a>
+                            </h3>
+                            <span>3 May 2021</span>
+                        </div>
+                    </div>
+                    <div class="news-source">
+                        <span>출처</span>
+                        <span>WHO(실시간)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

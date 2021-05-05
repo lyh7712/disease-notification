@@ -2,6 +2,7 @@ package nsuproject.diseasenotification.worldnews;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class WorldNewsController {
 
 
     @GetMapping("/world/news")
-    public List<WorldNews> findAllNews() {
+    public @ResponseBody List<WorldNews> findAllNews() {
         String url = "https://www.who.int/emergencies/disease-outbreak-news";
 
         service.insertNews(url);
@@ -23,3 +24,4 @@ public class WorldNewsController {
     }
 
 }
+

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="질병알리미">
+  <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
+  <meta property="og:description" content="전염병 알리미">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./css//index.css">
+  <style>
+  a:visited {color: #224ABE; text-decoration: none;}
+  </style>
+  <title>전염병알리미</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $(function() {
+      $.ajax({
+        url: "https://yts.mx/api/v2/list_movies.json?sort_by=download_count",
+          type: "GET",
+          success: function(data) {
+              $('#kototal').html(JSON.stringify(data['data'][0]['koreaTotal']));
+              $('#kotodaypatient').html(JSON.stringify(data['data'][0]['todaypatient']));
+              $('#kototalcure').html(JSON.stringify(data['data'][0]['kototalcure']));
+              $('#kotodaycure').html(JSON.stringify(data['data'][0]['todaycure']));
+              $('#kodead').html(JSON.stringify(data['data'][0]['kodead']));
+          }
+      })
+  })
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <h1 class="navbar-title">
+      <i class="fas fa-head-side-cough"></i>
+      전염병 알리미
+    </h1>
+  </nav>
+
+  <!-- Wrapper -->
+  <div id="sidebar">
+    <ul class="sidebar-ul">
+      <div>
+        <h4 id="clock" style="color:black;">00:00</h4>
+        <script>
+        var clockTarget = document.getElementById("clock");
+        function clock() {
+          var date = new Date();
+          var month = date.getMonth();
+          var clockDate = date.getDate();
+          var day = date.getDay();
+          var week = ['일', '월', '화', '수', '목', '금', '토'];
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          var seconds = date.getSeconds();
+          clockTarget .innerText = `${month+1}월 ${clockDate}일 ${week[day]}요일` +
+          `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes }`  : minutes }:${seconds < 10 ? `0${seconds }`  : seconds }`;
+        }
+        function init() {
+          clock();
+          setInterval(clock, 1000);
+        }
+        init();
+        </script>
+      </div>
+      <div class="sidebar-title">
+        <i class="fas fa-chart-area"></i>
+        <a href="main.html" class="fontbold">메인 홈 화면</a>
+      </div>
+      <div class="sidebar-title fontbold">
+        국내
+      </div>
+      <li class="sidebar-item"><a href="kocase.html">전염병확인자</a></li>
+      <li class="sidebar-item"><a href="./kovac.html">백신</a></li>
+      <li class="sidebar-item"><a href="./konews.html">뉴스</a></li>
+      <div class="sidebar-title fontbold">
+        해외
+      </div>
+      <li class="sidebar-item"><a href="./wocase.html">전염병확인자</a></li>
+      <li class="sidebar-item"><a href="wonews.html">뉴스</a></li>
+      <li class="sidebar-item"><a href="http://xn--now-po7lf48dlsm0ya109f.kr/" target='_blank'>국가별 감염병 예방정보</a></li>
+      <div class="sidebar-title fontbold">
+        <a href="./safe.html">안전수칙 및 소식</a>
+      </div>
+    </div>
+  </ul>
+</div>
+
+<div id="main">
+  <div class="main-container">
+    <div class="container-board">
+      <!-- 국내 현황 -->
+      <div class="card-box-korea">
+        <div class="card-header">
+          <h5>국내현황</h5>
+        </div>
+        <div class="card-body">
+          <!-- Top -->
+          <div class="body-top">
+            확진자<p id="kototal"></p>
+            사망자<p id="kodead"></p>
+            완치자<p id="kototalcure"></p>
+          </div>
+        </div>
+
+<style rel="stylesheet">
+body {
+  background-color: #ffffff;
+}
+body * {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #ffffff;
+  color: gray;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.table-users {
+  border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+  width: 800px;
+}
+
+table {
+  width: 100%;
+}
+table td, table th {
+  color: #2b686e;
+  padding: 10px;
+}
+table td {
+  text-align: center;
+  vertical-align: middle;
+}
+table td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: center;
+}
+table th {
+  background-color: #daeff1;
+  font-weight: 300;
+}
+table tr:nth-child(2n) {
+  background-color: white;
+}
+table tr:nth-child(2n+1) {
+  background-color: #edf7f8;
+}
+
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+  }
+
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100px;
+  }
+  td:not(:first-child) {
+    clear: both;
+    margin-left: 100px;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: center;
+  }
+  td:not(:first-child):before {
+    color: #91ced4;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+  td:nth-child(2):before {
+    content: '요구사항:';
+  }
+  td:nth-child(3):before {
+    content: '권고사항:';
+  }
+
+
+  tr {
+    padding: 10px 0;
+    position: relative;
+  }
+  tr:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  td:first-child {
+    background-color: #c8e7ea;
+    border-bottom: 1px solid #91ced4;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    width: 100%;
+  }
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+  td:not(:first-child):before {
+    font-size: 1em;
+    padding-top: 1em;
+    position: relative;
+  }
+  td:last-child {
+    padding-bottom: 1rem !important;
+  }
+
+  tr {
+    background-color: white !important;
+    border: 1px solid #6cbec6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+}
+
+</style><div class="table-users">
+
+   <table>
+      <tbody><tr>
+         <th>지 역</th>
+         <th width="230">확진자</th>
+         <th width="230">사망자</th>
+      </tr>
+
+<tr>
+<td>서울</td>
+<td>38032</td>
+<td>450</td>
+</tr>
+<tr>
+<td>부산</td>
+<td>5078</td>
+<td>122</td>
+</tr>
+<tr>
+<td>대구</td>
+<td>9363</td>
+<td>221</td>
+</tr>
+<tr>
+<td>인천</td>
+<td>5678</td>
+<td>59</td>
+</tr>
+<tr>
+<td>광주</td>
+<td>2413</td>
+<td>22</td>
+</tr>
+<tr>
+<td>대전</td>
+<td>1743</td>
+<td>17</td>
+</tr>
+<tr>
+<td>울산</td>
+<td>1931</td>
+<td>38</td>
+</tr>
+<tr>
+<td>세종</td>
+<td>361</td>
+<td>1</td>
+</tr>
+<tr>
+<td>경기</td>
+<td>34386</td>
+<td>583</td>
+</tr>
+<tr>
+<td>강원</td>
+<td>2688</td>
+<td>50</td>
+</tr>
+<tr>
+<td>충북</td>
+<td>2633</td>
+<td>64</td>
+</tr>
+<tr>
+<td>충남</td>
+<td>3050</td>
+<td>36</td>
+</tr>
+<tr>
+<td>전북</td>
+<td>1946</td>
+<td>58</td>
+</tr>
+<tr>
+<td>전남</td>
+<td>1055</td>
+<td>10</td>
+</tr>
+<tr>
+<td>경북</td>
+<td>4122</td>
+<td>78</td>
+</tr>
+<tr>
+<td>경남</td>
+<td>3958</td>
+<td>17</td>
+</tr>
+<tr>
+<td>제주</td>
+<td>714</td>
+<td>1</td>
+</tr>
+   </tbody></table></div>
+			</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
