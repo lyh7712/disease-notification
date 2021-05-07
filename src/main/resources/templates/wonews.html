@@ -10,8 +10,215 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
-  <script src="ajax.js"></script>
-  <link rel="stylesheet" href="./css//index.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $(function() {
+      $.ajax({
+        url: "http://localhost:8080/world/news",
+          type: "GET",
+          success: function(data) {
+
+              $('#wonews1').html(data[0]['title']);
+              $('#wonews2').html(data[1]['title']);
+              $('#wonews3').html(data[2]['title']);
+              $('#wonews4').html(data[3]['title']);
+              $('#wonews5').html(data[4]['title']);
+
+          }
+      })
+  })
+  </script>
+<script>
+var clockTarget = document.getElementById("clock");
+function clock() {
+var date = new Date();
+var month = date.getMonth();
+var clockDate = date.getDate();
+var day = date.getDay();
+var week = ['일', '월', '화', '수', '목', '금', '토'];
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+clockTarget .innerText = `${month+1}월 ${clockDate}일 ${week[day]}요일` +
+`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes }`  : minutes }:${seconds < 10 ? `0${seconds }`  : seconds }`;
+}
+function init() {
+clock();
+setInterval(clock, 1000);
+}
+init();
+</script>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin : 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    cursor : default;
+    }
+ul {
+    list-style : none;
+    padding-left: 0;
+    }
+a {
+    text-decoration: none;
+}
+
+#navbar {
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+    border-bottom: 1px solid lightslategray;
+}
+
+.navbar-des {
+    margin-top: 10px;
+}
+
+
+#sidebar {
+    position: fixed;
+    height: 500px;
+}
+
+#sidebar .sidebar-title {
+    margin-top: 10px;
+    padding:10px;
+}
+
+#sidebar li {
+    margin-left: 20px;
+}
+
+#main {
+    max-width: 1600px;
+}
+
+.main-container { /*가운데 정렬*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div ul{
+    background-color:rgb(236, 233, 233);
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left:1px solid;
+    padding:10px;
+}
+.container-board { /*간격 조정*/
+    margin-top: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fontbold{
+    font-weight:bold;
+    font-size:20px;
+}
+.card-header { /*너비*/
+    width: 100%;
+}
+.left{
+    float:left;
+}
+
+.card-header h5 { /*h5일때 박스 하단 px,색 */
+    margin: 0;
+    border-bottom: 1px solid lightslategrey;
+}
+
+
+.card-header h2 { /*h5일때 박스 하단 px,색 */
+    margin: 0;
+    border-bottom: 3px solid black;
+}
+
+
+.card-box-korea,
+.card-box-graph,
+.card-box-world { /*박스*/
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    border: 3px solid black;
+    width: 50%;
+    height: 100%;
+}
+
+.card-body h6 { /* h6일때 중간정렬*/
+    text-align: center;
+}
+
+div h3{
+    text-align:center;
+}
+
+.body-top {
+    text-align: center;
+
+}
+
+.body-bottom {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.first-count,
+.second-count {
+    text-align: center;
+}
+
+.news-body {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.news-box {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.news-card {
+    border: 3px solid black;
+    width: 60%;
+    padding: 16px;
+    margin: 10px;
+}
+
+ol li{
+    text-align: left;
+}
+
+.borderbottom{
+    border-bottom:1px solid;
+    width:100%;
+    margin:0;
+    padding:0;
+
+}
+
+.bk{
+    color: blue;
+}
+
+.org{
+    color : red;
+}
+</style>
   <style>
     a:visited {color: #224ABE; text-decoration: none;}
   </style>
@@ -35,18 +242,18 @@
     </div>
       <div class="sidebar-title">
         <i class="fas fa-chart-area"></i>
-        <a href="main.html" class="fontbold">메인 홈 화면</a>
+        <a href="../../../../../../../Downloads/캡스톤%20(1)/index.html" class="fontbold">메인 홈 화면</a>
       </div>
       <div class="sidebar-title fontbold">
         국내
       </div>
-      <li class="sidebar-item"><a href="kocase.html">전염병확인자</a></li>
+      <li class="sidebar-item"><a href="../../../../../../../Downloads/캡스톤%20(1)/kocase.html">전염병확인자</a></li>
       <li class="sidebar-item"><a href="./kovac.html">백신</a></li>
-      <li class="sidebar-item"><a href="./konews.html">뉴스</a></li>
+      <li class="sidebar-item"><a href="../../../../../../../Downloads/캡스톤%20(1)/konews.html">뉴스</a></li>
       <div class="sidebar-title fontbold">
         해외
       </div>
-      <li class="sidebar-item"><a href="./wocase.html">전염병확인자</a></li>
+      <li class="sidebar-item"><a href="../../../../../../../Downloads/캡스톤%20(1)/wocase.html">전염병확인자</a></li>
       <li class="sidebar-item"><a href="wonews.html">뉴스</a></li>
       <li class="sidebar-item"><a href="./wosearch.html">국가별 감염병 예방정보</a></li>
       <div class="sidebar-title fontbold">
@@ -59,20 +266,14 @@
     <div class="container-board">
         <div class="card-box-korea">
           <div class="card-header">
-<p><a href id="title0"><span id="url0"></span></a><p>
-<p><a href id="title1"><span id="url1"></span></a><p>
-<p><a href id="title2"><span id="url2"></span></a><p>
-<p><a href id="title3"><span id="url3"></span></a><p>
-<p><a href id="title4"><span id="url4"></span></a><p>
-<p><a href id="title5"><span id="url5"></span></a><p>
-<p><a href id="title6"><span id="url6"></span></a><p>
-<p><a href id="title7"><span id="url7"></span></a><p>
-<p><a href id="title9"><span id="url8"></span></a><p>
-<p><a href id="title0"><span id="url9"></span></a><p>
+            <p id="wonews1"></p>
+            <p id="wonews2"></p>
+            <p id="wonews3"></p>
+            <p id="wonews4"></p>
+            <p id="wonews5"></p>
           </div>
         </div>
     </div>
   </div>
     </body>
     </html>
-    

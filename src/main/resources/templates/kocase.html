@@ -11,25 +11,21 @@
 
   <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="./css//index.css">
-  <style>
-  a:visited {color: #224ABE; text-decoration: none;}
-  </style>
   <title>전염병알리미</title>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script>
   $(function() {
       $.ajax({
-        url: "https://yts.mx/api/v2/list_movies.json?sort_by=download_count",
+        url: "http://localhost:8080/korea/data",
           type: "GET",
           success: function(data) {
-              $('#kototal').html(JSON.stringify(data['data'][0]['koreaTotal']));
-              $('#kotodaypatient').html(JSON.stringify(data['data'][0]['todaypatient']));
-              $('#kototalcure').html(JSON.stringify(data['data'][0]['kototalcure']));
-              $('#kotodaycure').html(JSON.stringify(data['data'][0]['todaycure']));
-              $('#kodead').html(JSON.stringify(data['data'][0]['kodead']));
+
+              $('#kototal').html(data[0]['koreaTotal']);
+              $('#kodead').html(data[0]['dead']);
+              $('#kototalcure').html(data[0]['totalCure']);
           }
+
       })
   })
   </script>
