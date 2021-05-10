@@ -26,8 +26,8 @@ public class WorldNewsService {
             Elements elements = doc.select(".sf-list-vertical__item");
 
             for(Element el : elements) {
-                System.out.println(el.select("h4").text());
-                System.out.println(el.select("a").attr("href"));
+//                System.out.println(el.select("h4").text());
+//                System.out.println(el.select("a").attr("href"));
 
                 WorldNews worldNews = WorldNews.builder()
                         .title(el.select("h4").text())

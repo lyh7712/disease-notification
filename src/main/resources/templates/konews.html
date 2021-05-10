@@ -8,22 +8,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css//index.css">
 
     <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
 
     <title>전염병알리미</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="clock.js"></script>
     <script>
         $(function () {
             $.ajax({
                 url: "http://localhost:8080/korea/news",
                 type: "GET",
                 success: function (data) {
-                    $('#konews').html(data[0]['title']);k
+
+                    for (let i = 0; i < 20; i++) {
+                        makeWNews(data[i]['title'], data[i]['url']);
+                    }
                 }
             })
         })
+
+        function makeWNews(title, url) {
+
+            let a = `<h3><a href="${url}">${title}</a></h3>`;
+
+            $(".card-header").append(a);
+        }
     </script>
 </head>
 </head>
@@ -34,58 +46,57 @@
         <i class="fas fa-head-side-cough"></i>
         전염병 알리미
     </h1>
+    <h5>
+        <div>UPDATE: 05.10.00시</div>
+        <div>(출처: 질병관리본부 및 WHO)</div>
+    </h5>
 </nav>
 
 <!-- Wrapper -->
 <div id="sidebar">
-    <ul class="sidebar-ul">
-        <div>
-            <h4 id="clock" style="color:black;">00:00</h4>
-            <script>
-                var clockTarget = document.getElementById("clock");
+    <div>
+        <h3 class="clock"></h3>
+        <script>init();</script>
+        <h3 class="clock2"></h3>
+        <script>init2();</script>
+    </div>
 
-                function clock() {
-                    var date = new Date();
-                    var month = date.getMonth();
-                    var clockDate = date.getDate();
-                    var day = date.getDay();
-                    var week = ['일', '월', '화', '수', '목', '금', '토'];
-                    var hours = date.getHours();
-                    var minutes = date.getMinutes();
-                    var seconds = date.getSeconds();
-                    clockTarget.innerText = `${month + 1}월 ${clockDate}일 ${week[day]}요일` +
-                        `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
-                }
-
-                function init() {
-                    clock();
-                    setInterval(clock, 1000);
-                }
-
-                init();
-            </script>
-        </div>
-        <div class="sidebar-title">
-            <i class="fas fa-chart-area"></i>
-            <a href="./main.html" class="fontbold">메인 홈 화면</a>
-        </div>
-        <div class="sidebar-title fontbold">
+    <div class="sidebar-title">
+        <a href="./main.html" class="fontbold">
+            <font-w>메인 홈 화면</font-w>
+        </a>
+    </div>
+    <div class="sidebar-title2 fontbold">
+        <font-w>
             국내
-        </div>
-        <li class="sidebar-item"><a href="./kocase.html">전염병확인자</a></li>
-        <li class="sidebar-item"><a href="./kovac.html">백신</a></li>
-        <li class="sidebar-item"><a href="konews.html">뉴스</a></li>
-        <div class="sidebar-title fontbold">
+        </font-w>
+    </div>
+    <li class="sidebar-item"><a href="./kocase.html">
+        <font-w>전염병확인자</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./konews.html">
+        <font-w>뉴스</font-w>
+    </a></li>
+    <div class="sidebar-title2 fontbold">
+        <font-w>
             해외
-        </div>
-        <li class="sidebar-item"><a href="./wocase.html">전염병확인자</a></li>
-        <li class="sidebar-item"><a href="./wonews.html">뉴스</a></li>
-        <li class="sidebar-item"><a href="http://xn--now-po7lf48dlsm0ya109f.kr/" target='_blank'>국가별 감염병 예방정보</a></li>
-        <div class="sidebar-title fontbold">
-            <a href="./safe.html">안전수칙 및 소식</a>
-        </div>
+        </font-w>
+    </div>
+    <li><a href="./wocase.html">
+        <font-w>전염병확인자</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./wonews.html">
+        <font-w>뉴스</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./wosearch.html">
+        <font-w>국가별 감염병 예방정보</font-w>
+    </a></li>
+    <div class="sidebar-title fontbold">
+        <a href="./safe.html">
+            <font-w>안전수칙 및 소식</font-w>
+        </a>
+    </div>
 </div>
-</ul>
 </div>
 
 <div class="news-box">
@@ -120,7 +131,7 @@
                 </div>
                 <div class="news-source">
                     <span>출처</span>
-                    <span>네이버 뉴스 "코로나 확진자"검색(실시간)</span>
+                    <a href="">네이버 뉴스 "코로나 확진자"검색(실시간)</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="질병알리미">
+    <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
+    <meta property="og:description" content="전염병 알리미">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script type="text/javascript" src="selectBox.js"></script>
+    <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css//index.css">
+
+    <link rel="stylesheet" href="./css//nation.css">
+    <style>  a:visited {
+        color: #224ABE;
+        text-decoration: none;
+    }</style>
+    <title>전염병알리미</title>
+</head>
+<body>
+<nav id="navbar">
+    <h1 class="navbar-title">
+        <i class="fas fa-head-side-cough"></i>
+        전염병 알리미
+    </h1>
+    <h5>
+        <div>UPDATE: 05.10.00시</div>
+        <div>(출처: 질병관리본부 및 WHO)</div>
+    </h5>
+</nav>
+
+<!-- Wrapper -->
+<div id="sidebar">
+    <div>
+        <h3 class="clock"></h3>
+        <script>init();</script>
+        <h3 class="clock2"></h3>
+        <script>init2();</script>
+    </div>
+
+    <div class="sidebar-title">
+        <a href="./main.html" class="fontbold">
+            <font-w>메인 홈 화면</font-w>
+        </a>
+    </div>
+    <div class="sidebar-title2 fontbold">
+        <font-w>
+            국내
+        </font-w>
+    </div>
+    <li class="sidebar-item"><a href="./kocase.html">
+        <font-w>전염병확인자</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./konews.html">
+        <font-w>뉴스</font-w>
+    </a></li>
+    <div class="sidebar-title2 fontbold">
+        <font-w>
+            해외
+        </font-w>
+    </div>
+    <li><a href="./wocase.html">
+        <font-w>전염병확인자</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./wonews.html">
+        <font-w>뉴스</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./wosearch.html">
+        <font-w>국가별 감염병 예방정보</font-w>
+    </a></li>
+    <div class="sidebar-title fontbold">
+        <a href="./safe.html">
+            <font-w>안전수칙 및 소식</font-w>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="news-box">
+    <div class="news-body">
+        <form name="listForm" id="listForm" method="get" class="search_box">
+            <input type="hidden" id="search_nm" name="search_nm">
+            <div id="container" class="container">
+                <div class="contents sub nation_select">
+                    <div class="inner sub_inner">
+                        <h2 class="hidden">국가별 감염병 예방 정보 국가목록에서 찾기</h2>
+                        <p class="tit_type2"><span>국가 리스트</span></p>
+                        <div class="nation_list">
+                            <dl>
+                                <dt>ㄱ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/가나.html">가나</a></li>
+                                        <li><a href="./click/가봉.html">가봉</a></li>
+                                        <li><a href="./click/가이아나.html">가이아나</a></li>
+                                        <li><a href="./click/감비아.html">감비아</a></li>
+                                        <li><a href="./click/건지섬.html">건지섬</a></li>
+                                        <li><a href="./click/과달루페.html">과달루페</a></li>
+                                        <li><a href="./click/과테말라.html">과테말라</a></li>
+                                        <li><a href="./click/괌.html">괌</a></li>
+                                        <li><a href="./click/그레나다.html">그레나다</a></li>
+                                        <li><a href="./click/그레나딘제도.html">그레나딘 제도</a></li>
+                                        <li><a href="./click/그리스.html">그리스</a></li>
+                                        <li><a href="./click/그린란드.html">그린란드</a></li>
+                                        <li><a href="./click/기니.html">기니</a></li>
+                                        <li><a href="./click/기니비사우.html">기니비사우</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㄴ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/나미비아.html">나미비아</a></li>
+                                        <li><a href="./click/나우루.html">나우루</a></li>
+                                        <li><a href="./click/나이지리아.html">나이지리아</a></li>
+                                        <li><a href="./click/남극.html">남극</a></li>
+                                        <li><a href="./click/남수단.html">남수단</a></li>
+                                        <li><a href="./click/남아프리카 공화국.html">남아프리카 공화국</a></li>
+                                        <li><a href="./click/남조지아 군도.html">남조지아 군도</a></li>
+                                        <li><a href="./click/네덜란드.html">네덜란드</a></li>
+                                        <li><a href="./click/네덜란드령 카리브.html">네덜란드령 카리브</a></li>
+                                        <li><a href="./click/네팔.html">네팔</a></li>
+                                        <li><a href="./click/노르웨이.html">노르웨이</a></li>
+                                        <li><a href="./click/노퍽제도.html">노퍽제도</a></li>
+                                        <li><a href="./click/뉴질랜드.html">뉴질랜드</a></li>
+                                        <li><a href="./click/뉴칼레도니아.html">뉴칼레도니아</a></li>
+                                        <li><a href="./click/니우에.html">니우에</a></li>
+                                        <li><a href="./click/니제르.html">니제르</a></li>
+                                        <li><a href="./click/니카라과.html">니카라과</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㄷ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/대만.html">대만</a></li>
+                                        <li><a href="./click/대한민국.html">대한민국</a></li>
+                                        <li><a href="./click/덴마크.html">덴마크</a></li>
+                                        <li><a href="./click/도미니카 공화국.html">도미니카 공화국</a></li>
+                                        <li><a href="./click/도미니카 연방.html">도미니카 연방</a></li>
+                                        <li><a href="./click/독일.html">독일</a></li>
+                                        <li><a href="./click/동티모르.html">동티모르</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㄹ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/라오스.html">라오스</a></li>
+                                        <li><a href="./click/라이베리아.html">라이베리아</a></li>
+                                        <li><a href="./click/라트비아.html">라트비아</a></li>
+                                        <li><a href="./click/러시아.html">러시아</a></li>
+                                        <li><a href="./click/레바논.html">레바논</a></li>
+                                        <li><a href="./click/레소토.html">레소토</a></li>
+                                        <li><a href="./click/레위니옹.html">레위니옹</a></li>
+                                        <li><a href="./click/로타섬.html">로타섬</a></li>
+                                        <li><a href="./click/루마니아.html">루마니아</a></li>
+                                        <li><a href="./click/룩셈부르크.html">룩셈부르크</a></li>
+                                        <li><a href="./click/르완다.html">르완다</a></li>
+                                        <li><a href="./click/리비아.html">리비아</a></li>
+                                        <li><a href="./click/리투아니아.html">리투아니아</a></li>
+                                        <li><a href="./click/리히텐슈타인.html">리히텐슈타인</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅁ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/마다가스카르.html">마다가스카르</a></li>
+                                        <li><a href="./click/마르티니크.html">마르티니크</a></li>
+                                        <li><a href="./click/마셜군도.html">마셜군도</a></li>
+                                        <li><a href="./click/마요트섬.html">마요트섬</a></li>
+                                        <li><a href="./click/마카오.html">마카오</a></li>
+                                        <li><a href="./click/말라위.html">말라위</a></li>
+                                        <li><a href="./click/말레이시아.html">말레이시아</a></li>
+                                        <li><a href="./click/말리.html">말리</a></li>
+                                        <li><a href="./click/맨섬.html">맨섬</a></li>
+                                        <li><a href="./click/멕시코.html">멕시코</a></li>
+                                        <li><a href="./click/모나코.html">모나코</a></li>
+                                        <li><a href="./click/모로코.html">모로코</a></li>
+                                        <li><a href="./click/모리셔스.html">모리셔스</a></li>
+                                        <li><a href="./click/모리타니.html">모리타니</a></li>
+                                        <li><a href="./click/모잠비크.html">모잠비크</a></li>
+                                        <li><a href="./click/몬테네그로.html">몬테네그로</a></li>
+                                        <li><a href="./click/몬트세랫.html">몬트세랫</a></li>
+                                        <li><a href="./click/몰도바.html">몰도바</a></li>
+                                        <li><a href="./click/몰디브.html">몰디브</a></li>
+                                        <li><a href="./click/몰타.html">몰타</a></li>
+                                        <li><a href="./click/몽골.html">몽골</a></li>
+                                        <li><a href="./click/미국.html">미국</a></li>
+                                        <li><a href="./click/미국령 버진아일랜드.html">미국령 버진아일랜드</a></li>
+                                        <li><a href="./click/미얀마.html">미얀마</a></li>
+                                        <li><a href="./click/미크로네시아.html">미크로네시아</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅂ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/바누아투.html">바누아투</a></li>
+                                        <li><a href="./click/바레인.html">바레인</a></li>
+                                        <li><a href="./click/바베이도스.html">바베이도스</a></li>
+                                        <li><a href="./click/바티칸시국.html">바티칸 시국</a></li>
+                                        <li><a href="./click/바하마.html">바하마</a></li>
+                                        <li><a href="./click/방글라데시.html">방글라데시</a></li>
+                                        <li><a href="./click/버뮤다제도.html">버뮤다제도</a></li>
+                                        <li><a href="./click/버진고다섬.html">버진고다섬</a></li>
+                                        <li><a href="./click/베냉.html">베냉</a></li>
+                                        <li><a href="./click/베네수엘라.html">베네수엘라</a></li>
+                                        <li><a href="./click/베트남.html">베트남</a></li>
+                                        <li><a href="./click/벨기에.html">벨기에</a></li>
+                                        <li><a href="./click/벨라루스.html">벨라루스</a></li>
+                                        <li><a href="./click/벨리즈.html">벨리즈</a></li>
+                                        <li><a href="./click/보네르섬.html">보네르섬</a></li>
+                                        <li><a href="./click/보스니아 헤르체고비나.html">보스니아 헤르체고비나</a></li>
+                                        <li><a href="./click/보츠와나.html">보츠와나</a></li>
+                                        <li><a href="./click/볼리비아.html">볼리비아</a></li>
+                                        <li><a href="./click/부룬디.html">부룬디</a></li>
+                                        <li><a href="./click/부르키나파소.html">부르키나파소</a></li>
+                                        <li><a href="./click/부탄.html">부탄</a></li>
+                                        <li><a href="./click/북마케도니아.html">북마케도니아</a></li>
+                                        <li><a href="./click/북부 마리아나제도.html">북부 마리아나 제도</a></li>
+                                        <li><a href="./click/북한.html">북한</a></li>
+                                        <li><a href="./click/불가리아.html">불가리아</a></li>
+                                        <li><a href="./click/브라질.html">브라질</a></li>
+                                        <li><a href="./click/브루나이.html">브루나이</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅅ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/사모아.html">사모아</a></li>
+                                        <li><a href="./click/사바.html">사바</a></li>
+                                        <li><a href="./click/사우디아라비아.html">사우디아라비아</a></li>
+                                        <li><a href="./click/사이판.html">사이판</a></li>
+                                        <li><a href="./click/산마리노.html">산마리노</a></li>
+                                        <li><a href="./click/상투메프린시페.html">상투메 프린시페</a></li>
+                                        <li><a href="./click/생 마르탱.html">생 마르탱</a></li>
+                                        <li><a href="./click/생바르텔레미.html">생바르텔레미</a></li>
+                                        <li><a href="./click/생피에르 미클롱.html">생피에르 미클롱</a></li>
+                                        <li><a href="./click/서사하라.html">서사하라</a></li>
+                                        <li><a href="./click/세네갈.html">세네갈</a></li>
+                                        <li><a href="./click/세르비아.html">세르비아</a></li>
+                                        <li><a href="./click/세이셸.html">세이셸</a></li>
+                                        <li><a href="./click/세인트루시아.html">세인트루시아</a></li>
+                                        <li><a href="./click/세인트마틴.html">세인트마틴</a></li>
+                                        <li><a href="./click/세인트빈센트 그레나딘.html">세인트빈센트 그레나딘</a></li>
+                                        <li><a href="./click/세인트존섬.html">세인트존섬</a></li>
+                                        <li><a href="./click/세인트크로이섬.html">세인트크로이섬</a></li>
+                                        <li><a href="./click/세인트키츠네비스.html">세인트키츠 네비스</a></li>
+                                        <li><a href="./click/세인트토머스섬.html">세인트토머스섬</a></li>
+                                        <li><a href="./click/세인트헬레나.html">세인트헬레나</a></li>
+                                        <li><a href="./click/소말리아.html">소말리아</a></li>
+                                        <li><a href="./click/소시에테제도.html">소시에테 제도</a></li>
+                                        <li><a href="./click/솔로몬제도.html">솔로몬 제도</a></li>
+                                        <li><a href="./click/수단.html">수단</a></li>
+                                        <li><a href="./click/수리남.html">수리남</a></li>
+                                        <li><a href="./click/스리랑카.html">스리랑카</a></li>
+                                        <li><a href="./click/스와질란드.html">스와질란드</a></li>
+                                        <li><a href="./click/스웨덴.html">스웨덴</a></li>
+                                        <li><a href="./click/스위스.html">스위스</a></li>
+                                        <li><a href="./click/스코틀랜드.html">스코틀랜드</a></li>
+                                        <li><a href="./click/스페인.html">스페인</a></li>
+                                        <li><a href="./click/슬로바키아.html">슬로바키아</a></li>
+                                        <li><a href="./click/슬로베니아.html">슬로베니아</a></li>
+                                        <li><a href="./click/시리아.html">시리아</a></li>
+                                        <li><a href="./click/시에라리온.html">시에라리온</a></li>
+                                        <li><a href="./click/신트마르턴.html">신트마르턴</a></li>
+                                        <li><a href="./click/신트외스타티위스섬.html">신트외스타티위스섬</a></li>
+                                        <li><a href="./click/싱가포르.html">싱가포르</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅇ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/아랍에미리트.html">아랍에미리트</a></li>
+                                        <li><a href="./click/아루바.html">아루바</a></li>
+                                        <li><a href="./click/아르메니아.html">아르메니아</a></li>
+                                        <li><a href="./click/아르헨티나.html">아르헨티나</a></li>
+                                        <li><a href="./click/아메리칸사모아.html">아메리칸 사모아</a></li>
+                                        <li><a href="./click/아소르스제도.html">아소르스 제도</a></li>
+                                        <li><a href="./click/아이슬란드.html">아이슬란드</a></li>
+                                        <li><a href="./click/아이티.html">아이티</a></li>
+                                        <li><a href="./click/아일랜드.html">아일랜드</a></li>
+                                        <li><a href="./click/아제르바이잔.html">아제르바이잔</a></li>
+                                        <li><a href="./click/아프가니스탄.html">아프가니스탄</a></li>
+                                        <li><a href="./click/안도라.html">안도라</a></li>
+                                        <li><a href="./click/알바니아.html">알바니아</a></li>
+                                        <li><a href="./click/알제리.html">알제리</a></li>
+                                        <li><a href="./click/앙골라.html">앙골라</a></li>
+                                        <li><a href="./click/애너가다섬.html">애너가다섬</a></li>
+                                        <li><a href="./click/앤티가바부다.html">앤티가 바부다</a></li>
+                                        <li><a href="./click/앵귈라.html">앵귈라</a></li>
+                                        <li><a href="./click/에리트레아.html">에리트레아</a></li>
+                                        <li><a href="./click/에스토니아.html">에스토니아</a></li>
+                                        <li><a href="./click/에콰도르.html">에콰도르</a></li>
+                                        <li><a href="./click/에티오피아.html">에티오피아</a></li>
+                                        <li><a href="./click/엘살바도르.html">엘살바도르</a></li>
+                                        <li><a href="./click/영국.html">영국</a></li>
+                                        <li><a href="./click/영국령 버진아일랜드.html">영국령 버진아일랜드</a></li>
+                                        <li><a href="./click/영국령 인도양지역.html">영국령 인도양 지역</a></li>
+                                        <li><a href="./click/예멘.html">예멘</a></li>
+                                        <li><a href="./click/오만.html">오만</a></li>
+                                        <li><a href="./click/오스트리아.html">오스트리아</a></li>
+                                        <li><a href="./click/온두라스.html">온두라스</a></li>
+                                        <li><a href="./click/요르단.html">요르단</a></li>
+                                        <li><a href="./click/우간다.html">우간다</a></li>
+                                        <li><a href="./click/우루과이.html">우루과이</a></li>
+                                        <li><a href="./click/우즈베키스탄.html">우즈베키스탄</a></li>
+                                        <li><a href="./click/우크라이나.html">우크라이나</a></li>
+                                        <li><a href="./click/웨이크섬.html">웨이크섬</a></li>
+                                        <li><a href="./click/웨일스.html">웨일스</a></li>
+                                        <li><a href="./click/이라크.html">이라크</a></li>
+                                        <li><a href="./click/이란.html">이란</a></li>
+                                        <li><a href="./click/이스라엘.html">이스라엘</a></li>
+                                        <li><a href="./click/이집트.html">이집트</a></li>
+                                        <li><a href="./click/이탈리아.html">이탈리아</a></li>
+                                        <li><a href="./click/인도.html">인도</a></li>
+                                        <li><a href="./click/인도네시아.html">인도네시아</a></li>
+                                        <li><a href="./click/일본.html">일본</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅈ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/자메이카.html">자메이카</a></li>
+                                        <li><a href="./click/잠비아.html">잠비아</a></li>
+                                        <li><a href="./click/저지섬.html">저지섬</a></li>
+                                        <li><a href="./click/적도 기니.html">적도 기니</a></li>
+                                        <li><a href="./click/조지아.html">조지아</a></li>
+                                        <li><a href="./click/중국.html">중국</a></li>
+                                        <li><a href="./click/중앙아프리카 공화국.html">중앙아프리카 공화국</a></li>
+                                        <li><a href="./click/지부티.html">지부티</a></li>
+                                        <li><a href="./click/지브롤터.html">지브롤터</a></li>
+                                        <li><a href="./click/짐바브웨.html">짐바브웨</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅊ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/차드.html">차드</a></li>
+                                        <li><a href="./click/체코.html">체코</a></li>
+                                        <li><a href="./click/칠레.html">칠레</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅋ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/카메룬.html">카메룬</a></li>
+                                        <li><a href="./click/카보베르데.html">카보베르데</a></li>
+                                        <li><a href="./click/카자흐스탄.html">카자흐스탄</a></li>
+                                        <li><a href="./click/카타르.html">카타르</a></li>
+                                        <li><a href="./click/캄보디아.html">캄보디아</a></li>
+                                        <li><a href="./click/캐나다.html">캐나다</a></li>
+                                        <li><a href="./click/케냐.html">케냐</a></li>
+                                        <li><a href="./click/케이맨 제도.html">케이맨 제도</a></li>
+                                        <li><a href="./click/코모로.html">코모로</a></li>
+                                        <li><a href="./click/코소보.html">코소보</a></li>
+                                        <li><a href="./click/코스타리카.html">코스타리카</a></li>
+                                        <li><a href="./click/코코스제도.html">코코스 제도</a></li>
+                                        <li><a href="./click/코트디부아르.html">코트디부아르</a></li>
+                                        <li><a href="./click/콜롬비아.html">콜롬비아</a></li>
+                                        <li><a href="./click/콩고.html">콩고</a></li>
+                                        <li><a href="./click/콩고민주공화국.html">콩고민주공화국</a></li>
+                                        <li><a href="./click/쿠바.html">쿠바</a></li>
+                                        <li><a href="./click/쿠웨이트.html">쿠웨이트</a></li>
+                                        <li><a href="./click/쿡 제도.html">쿡 제도</a></li>
+                                        <li><a href="./click/퀴라소.html">퀴라소</a></li>
+                                        <li><a href="./click/크로아티아.html">크로아티아</a></li>
+                                        <li><a href="./click/크리스마스섬.html">크리스마스섬</a></li>
+                                        <li><a href="./click/키르기스스탄.html">키르기스스탄</a></li>
+                                        <li><a href="./click/키리바시.html">키리바시</a></li>
+                                        <li><a href="./click/키프로스.html">키프로스</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅌ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/타지키스탄.html">타지키스탄</a></li>
+                                        <li><a href="./click/탄자니아.html">탄자니아</a></li>
+                                        <li><a href="./click/태국.html">태국</a></li>
+                                        <li><a href="./click/터크스 케이커스제도.html">터크스 케이커스 제도</a></li>
+                                        <li><a href="./click/터키.html">터키</a></li>
+                                        <li><a href="./click/토고.html">토고</a></li>
+                                        <li><a href="./click/토르톨라섬.html">토르톨라섬</a></li>
+                                        <li><a href="./click/토바고섬.html">토바고섬</a></li>
+                                        <li><a href="./click/토켈라우.html">토켈라우</a></li>
+                                        <li><a href="./click/통가.html">통가</a></li>
+                                        <li><a href="./click/투르크메니스탄.html">투르크메니스탄</a></li>
+                                        <li><a href="./click/투발루.html">투발루</a></li>
+                                        <li><a href="./click/튀니지.html">튀니지</a></li>
+                                        <li><a href="./click/트리니다드토바고.html">트리니다드 토바고</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅍ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/파나마.html">파나마</a></li>
+                                        <li><a href="./click/파라과이.html">파라과이</a></li>
+                                        <li><a href="./click/파키스탄.html">파키스탄</a></li>
+                                        <li><a href="./click/파푸아뉴기니.html">파푸아뉴기니</a></li>
+                                        <li><a href="./click/팔라우.html">팔라우</a></li>
+                                        <li><a href="./click/팔레스타인.html">팔레스타인</a></li>
+                                        <li><a href="./click/페로 제도.html">페로 제도</a></li>
+                                        <li><a href="./click/페루.html">페루</a></li>
+                                        <li><a href="./click/포르투갈.html">포르투갈</a></li>
+                                        <li><a href="./click/포르투갈령 마데이라제도.html">포르투갈령 마데이라 제도</a></li>
+                                        <li><a href="./click/포클랜드제도.html">포클랜드 제도</a></li>
+                                        <li><a href="./click/폴란드.html">폴란드</a></li>
+                                        <li><a href="./click/푸에르토리코.html">푸에르토리코</a></li>
+                                        <li><a href="./click/프랑스.html">프랑스</a></li>
+                                        <li><a href="./click/프랑스령 기아나.html">프랑스령 기아나</a></li>
+                                        <li><a href="./click/프랑스령 폴리네시아.html">프랑스령 폴리네시아</a></li>
+                                        <li><a href="./click/피지.html">피지</a></li>
+                                        <li><a href="./click/핀란드.html">핀란드</a></li>
+                                        <li><a href="./click/필리핀.html">필리핀</a></li>
+                                        <li><a href="./click/핏케언제도.html">핏케언 제도</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>ㅎ</dt>
+                                <dd>
+                                    <ul>
+                                        <li><a href="./click/헝가리.html">헝가리</a></li>
+                                        <li><a href="./click/호주.html">호주</a></li>
+                                        <li><a href="./click/홍콩.html">홍콩</a></li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

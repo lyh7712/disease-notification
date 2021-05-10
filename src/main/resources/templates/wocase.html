@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="질병알리미">
+    <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
+    <meta property="og:description" content="전염병 알리미">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="clock.js"></script>
+
+    <link rel="stylesheet" href="./css//index.css">
+    <script>
+        //world_data
+        $(function () {
+            $.ajax({
+                url: "http://localhost:8080/world/data",
+                type: "GET",
+                success: function (data) {
+
+                    $('#wototal').html(data[0]['worldTotal']);
+                    $('#wodead').html(data[0]['totalDead']);
+                }
+            })
+        })
+    </script>
+    <title>전염병알리미</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav id="navbar">
+    <h1 class="navbar-title">
+        <i class="fas fa-head-side-cough"></i>
+        전염병 알리미
+    </h1>
+    <h5>
+        <div>UPDATE: 05.10.00시</div>
+        <div>(출처: 질병관리본부 및 WHO)</div>
+    </h5>
+</nav>
+
+<!-- Wrapper -->
+<div id="sidebar">
+    <div>
+        <h3 class="clock"></h3>
+        <script>init();</script>
+        <h3 class="clock2"></h3>
+        <script>init2();</script>
+    </div>
+
+    <div class="sidebar-title">
+        <a href="./main.html" class="fontbold">
+            <font-w>메인 홈 화면</font-w>
+        </a>
+    </div>
+    <div class="sidebar-title2 fontbold">
+        <font-w>
+            국내
+        </font-w>
+    </div>
+    <li class="sidebar-item"><a href="./kocase.html">
+        <font-w>전염병확인자</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./konews.html">
+        <font-w>뉴스</font-w>
+    </a></li>
+    <div class="sidebar-title2 fontbold">
+        <font-w>
+            해외
+        </font-w>
+    </div>
+    <li><a href="./wocase.html">
+        <font-w>전염병확인자</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./wonews.html">
+        <font-w>뉴스</font-w>
+    </a></li>
+    <li class="sidebar-item"><a href="./wosearch.html">
+        <font-w>국가별 감염병 예방정보</font-w>
+    </a></li>
+    <div class="sidebar-title fontbold">
+        <a href="./safe.html">
+            <font-w>안전수칙 및 소식</font-w>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="main-container">
+    <div class="container-board">
+        <div class="card-box-korea">
+            <div class="card-header">
+                <div class="body-top">
+                    확진자 <p id="wototal"></p>
+                    사망자 <p id="wodead"></p>
+                </div>
+                <div class="table-users">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>지 역</th>
+                            <th width="230">확진자</th>
+                            <th width="230">사망자</th>
+                        </tr>
+
+                        <tr>
+                            <td>미국</td>
+                            <td>33,476,781</td>
+                            <td>595,812</td>
+                        </tr>
+                        <tr>
+                            <td>인도</td>
+                            <td>22,662,575</td>
+                            <td>246,146</td>
+                        </tr>
+                        <tr>
+                            <td>브라질</td>
+                            <td>15,184,790</td>
+                            <td>422,418</td>
+                        </tr>
+                        <tr>
+                            <td>프랑스</td>
+                            <td>5,777,087</td>
+                            <td>106,392</td>
+                        </tr>
+                        <tr>
+                            <td>터키</td>
+                            <td>5,031,332</td>
+                            <td>43,029</td>
+                        </tr>
+                        <tr>
+                            <td>러시아</td>
+                            <td>4,880,262</td>
+                            <td>113,326</td>
+                        </tr>
+                        <tr>
+                            <td>영국</td>
+                            <td>4,434,860</td>
+                            <td>127,605</td>
+                        </tr>
+                        <tr>
+                            <td>이탈리아</td>
+                            <td>4,111,210</td>
+                            <td>122,833</td>
+                        </tr>
+                        <tr>
+                            <td>스페인</td>
+                            <td>3,567,408</td>
+                            <td>78,792</td>
+                        </tr>
+                        <tr>
+                            <td>독일</td>
+                            <td>3,527,540</td>
+                            <td>85,371</td>
+                        </tr>
+                        <tr>
+                            <td>아르헨티나</td>
+                            <td>3,147,740</td>
+                            <td>67,325</td>
+                        </tr>
+                        <tr>
+                            <td>충남</td>
+                            <td>3050</td>
+                            <td>67,325</td>
+                        </tr>
+                        <tr>
+                            <td>콜롬비아</td>
+                            <td>3,002,758</td>
+                            <td>77,854</td>
+                        </tr>
+                        <tr>
+                            <td>폴란드</td>
+                            <td>2,833,052</td>
+                            <td>70,012</td>
+                        </tr>
+                        <tr>
+                            <td>이란</td>
+                            <td>2,654,811</td>
+                            <td>2,654,811</td>
+                        </tr>
+                        <tr>
+                            <td>멕시코</td>
+                            <td>2,365,792</td>
+                            <td>218,985</td>
+                        </tr>
+                        <tr>
+                            <td>우크라이나</td>
+                            <td>2,122,327</td>
+                            <td>46,512</td>
+                        </tr>
+                        <tr>
+                            <td>페루</td>
+                            <td>1,850,290</td>
+                            <td>64,103</td>
+                        </tr>
+                        <tr>
+                            <td>인도네시아</td>
+                            <td>1,713,684</td>
+                            <td>47,012</td>
+                        </tr>
+                        <tr>
+                            <td>체코</td>
+                            <td>1,645,061</td>
+                            <td>29,667</td>
+                        </tr>
+                        <tr>
+                            <td>남아프리카 공화국</td>
+                            <td>1,596,595</td>
+                            <td>54,735</td>
+                        </tr>
+                        <tr>
+                            <td>네덜란드</td>
+                            <td>1,560,022</td>
+                            <td>17,323</td>
+                        </tr>
+                        <tr>
+                            <td>캐나다</td>
+                            <td>1,286,666</td>
+                            <td>24,626</td>
+                        </tr>
+                        <tr>
+                            <td>칠레</td>
+                            <td>1,247,469</td>
+                            <td>27,218</td>
+                        </tr>
+                        <tr>
+                            <td>이라크</td>
+                            <td>1,112,725</td>
+                            <td>15,771</td>
+                        </tr>
+                        <tr>
+                            <td>필리핀</td>
+                            <td>1,101,990</td>
+                            <td>18,472</td>
+                        </tr>
+                        <tr>
+                            <td>루마니아</td>
+                            <td>1,066,111</td>
+                            <td>28,966</td>
+                        </tr>
+                        <tr>
+                            <td>벨기에</td>
+                            <td>1,016,609</td>
+                            <td>24,551</td>
+                        </tr>
+                        <tr>
+                            <td>스웨덴</td>
+                            <td>1,007,792</td>
+                            <td>14,173</td>
+                        </tr>
+                        <tr>
+                            <td>파키스탄</td>
+                            <td>861,473</td>
+                            <td>18,993</td>
+                        </tr>
+                        <tr>
+                            <td>포르투갈</td>
+                            <td>839,582</td>
+                            <td>16,992</td>
+                        </tr>
+                        <tr>
+                            <td>이스라엘</td>
+                            <td>838,892</td>
+                            <td>6,377</td>
+                        </tr>
+                        <tr>
+                            <td>헝가리</td>
+                            <td>791,709</td>
+                            <td>28,602</td>
+                        </tr>
+                        <tr>
+                            <td>방글라데시</td>
+                            <td>773,513</td>
+                            <td>11,934</td>
+                        </tr>
+                        <tr>
+                            <td>요르단</td>
+                            <td>719,976</td>
+                            <td>9,092</td>
+                        </tr>
+                        <tr>
+                            <td>세르비아</td>
+                            <td>700,408</td>
+                            <td>6,558</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+    
