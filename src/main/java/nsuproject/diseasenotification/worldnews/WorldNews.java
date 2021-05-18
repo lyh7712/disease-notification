@@ -4,10 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
@@ -17,12 +14,20 @@ public class WorldNews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String title;
+
+    @Column
     private String url;
 
+    @Column
+    private Long count;
+
     @Builder
-    public WorldNews(String title, String url) {
+    public WorldNews(String title, String url, Long count) {
         this.title = title;
         this.url = url;
+        this.count = count;
     }
 }

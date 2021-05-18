@@ -32,6 +32,7 @@ public class WorldNewsService {
                 WorldNews worldNews = WorldNews.builder()
                         .title(el.select("h4").text())
                         .url(el.select("a").attr("href"))
+                        .count(0L)
                         .build();
 
                 repository.save(worldNews);

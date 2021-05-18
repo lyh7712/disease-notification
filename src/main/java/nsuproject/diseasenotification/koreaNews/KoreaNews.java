@@ -20,11 +20,15 @@ public class KoreaNews {
     @Column
     private String url;
 
+    @Column
+    private Long count;
+
+
     @Builder
-    public KoreaNews(Long id, String title, String url) {
-        this.id = id;
+    public KoreaNews(String title, String url, Long count) {
         this.title = title;
         this.url = url;
+        this.count = count;
     }
 
 }

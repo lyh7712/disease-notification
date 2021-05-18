@@ -1,115 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="질병알리미">
-  <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
-  <meta property="og:description" content="전염병 알리미">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css//index.css">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="질병알리미">
+    <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
+    <meta property="og:description" content="전염병 알리미">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css//index.css">
 
-  <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="clock.js"></script>
-  <script>
-    //world_news
-    $(function () {
-      $.ajax({
-        url: "http://localhost:8080/world/news",
-        type: "GET",
-        success: function (data) {
-          // $('#wonews1').html(data[0]['title']);
-          // $('#wonews2').html(data[1]['title']);
-          // $('#wonews3').html(data[2]['title']);
+    <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="clock.js"></script>
+    <script>
+        //world_news
+        $(function () {
+            $.ajax({
+                url: "http://localhost:8080/world/news",
+                type: "GET",
+                success: function (data) {
+                    // $('#wonews1').html(data[0]['title']);
+                    // $('#wonews2').html(data[1]['title']);
+                    // $('#wonews3').html(data[2]['title']);
 
-          for (let i = 0; i < 20; i++) {
-            makeWNews(data[i]['title'], data[i]['url']);
-          }
+                    for (let i = 0; i < 20; i++) {
+                        makeWNews(data[i]['title'], data[i]['url']);
+                    }
+                }
+            })
+        })
+
+
+        function makeWNews(title, url) {
+
+            let a = `<h3><a href="${url}">${title}</a></h3>`;
+
+            $(".card-new-header").append(a);
         }
-      })
-    })
+    </script>
 
-
-    function makeWNews(title, url) {
-
-      let a = `<h3><a href="${url}">${title}</a></h3>`;
-
-      $(".card-header").append(a);
-    }
-  </script>
-
-  <title>전염병알리미</title>
+    <title>전염병알리미</title>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav id="navbar">
+<!-- Navbar -->
+<nav id="navbar">
     <h1 class="navbar-title">
         <i class="fas fa-head-side-cough"></i>
         전염병 알리미
     </h1>
     <h5>
-      <div>UPDATE: 05.10.00시</div>
-      <div>(출처: 질병관리본부 및 WHO)</div>
+        <div>UPDATE: 05.10.00시</div>
+        <div>(출처: 질병관리본부 및 WHO)</div>
     </h5>
-  </nav>
+</nav>
 
-  <!-- Wrapper -->
-  <div id="sidebar">
+<!-- Wrapper -->
+<div id="sidebar">
     <div>
-      <h3 class="clock"></h3>
-      <script>init();</script>
-      <h3 class="clock2"></h3>
-      <script>init2();</script>
+        <h3 class="clock"></h3>
+        <script>init();</script>
+        <h3 class="clock2"></h3>
+        <script>init2();</script>
     </div>
 
     <div class="sidebar-title">
-      <a href="./main.html" class="fontbold">
-        <font-w>메인 홈 화면</font-w>
-      </a>
+        <a href="./main.html" class="fontbold">
+            <font-w>메인 홈 화면</font-w>
+        </a>
     </div>
     <div class="sidebar-title2 fontbold">
-      <font-w>
-        국내
-      </font-w>
+        <font-w>
+            국내
+        </font-w>
     </div>
     <li class="sidebar-item"><a href="./kocase.html">
-      <font-w>전염병확인자</font-w>
+        <font-w>전염병확인자</font-w>
     </a></li>
     <li class="sidebar-item"><a href="./konews.html">
-      <font-w>뉴스</font-w>
+        <font-w>뉴스</font-w>
     </a></li>
     <div class="sidebar-title2 fontbold">
-      <font-w>
-        해외
-      </font-w>
+        <font-w>
+            해외
+        </font-w>
     </div>
     <li><a href="./wocase.html">
-      <font-w>전염병확인자</font-w>
+        <font-w>전염병확인자</font-w>
     </a></li>
     <li class="sidebar-item"><a href="./wonews.html">
-      <font-w>뉴스</font-w>
+        <font-w>뉴스</font-w>
     </a></li>
     <li class="sidebar-item"><a href="./wosearch.html">
-      <font-w>국가별 감염병 예방정보</font-w>
+        <font-w>국가별 감염병 예방정보</font-w>
     </a></li>
     <div class="sidebar-title fontbold">
-      <a href="./safe.html">
-        <font-w>안전수칙 및 소식</font-w>
-      </a>
+        <a href="./safe.html">
+            <font-w>안전수칙 및 소식</font-w>
+        </a>
     </div>
-  </div>
-  </div>
-  <div class="main-container">
-    <div class="container-board">
-        <div class="card-box-korea">
-          <div class="card-header">
+</div>
+</div>
+
+<div class="news-box">
+  <div class="news-body">
+    <!-- 해외 뉴스 -->
+    <div class="news-card">
+
+      <div class="card-body">
+        <div class="card">
+          <h4>해외 주요 뉴스</h4>
+          <div class="card-new-header">
 
           </div>
         </div>
+        <div class="news-source">
+            <span class="card-s">출처</span>
+            <a href="https://www.who.int/emergencies/disease-outbreak-news">WHO(실시간)</a>
+        </div>
+      </div>
     </div>
+
   </div>
-    </body>
-    </html>
+</div>
+</body>
+</html>

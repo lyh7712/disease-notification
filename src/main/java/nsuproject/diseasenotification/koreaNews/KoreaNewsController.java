@@ -16,7 +16,7 @@ public class KoreaNewsController {
     private KoreaNewsService service;
 
     @GetMapping("/korea/news")
-    public List<KoreaNews> getAllNews() {
+    public @ResponseBody List<KoreaNews> getAllNews() {
 
         String url = "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%98";
 
@@ -24,7 +24,6 @@ public class KoreaNewsController {
 
         return service.findAllNews();
     }
-
 
 }
 

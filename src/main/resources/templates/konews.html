@@ -17,6 +17,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="clock.js"></script>
     <script>
+
+        //ajax
         $(function () {
             $.ajax({
                 url: "http://localhost:8080/korea/news",
@@ -34,8 +36,9 @@
 
             let a = `<h3><a href="${url}">${title}</a></h3>`;
 
-            $(".card-header").append(a);
+            $(".card-new-header").append(a);
         }
+
     </script>
 </head>
 </head>
@@ -103,35 +106,17 @@
     <div class="news-body">
         <!-- 국내 뉴스 -->
         <div class="news-card">
-            <div class="card-header">
-                <h5>국내 주요 뉴스</h5>
-            </div>
+
             <div class="card-body">
                 <div class="card">
+                    <h4>국내 주요 뉴스</h4>
                     <div class="card-new-header">
-                        <h3>
-                            <p id="konews"></p>
-                            <a href="">코로나 19 하루 신규 확진자 위태로운 두 자릿수</a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-new-header">
-                        <h3>
-                            <a href="">서울 어제 하루 코로나19 확진자 23명... 장례식장 식당서 추가 확진</a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-new-header">
-                        <h3>
-                            <a href="">코로나 19 어제 84명 신규확진...지역발생 53명</a>
-                        </h3>
+
                     </div>
                 </div>
                 <div class="news-source">
-                    <span>출처</span>
-                    <a href="">네이버 뉴스 "코로나 확진자"검색(실시간)</a>
+                    <span class="card-s">출처</span>
+                    <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%98">네이버 뉴스 "코로나"검색(실시간)</a>
                 </div>
             </div>
         </div>

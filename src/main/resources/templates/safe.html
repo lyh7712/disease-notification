@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="질병알리미">
+  <meta name="description" content="유행하고 있는 질병 및 해외에서 떠오르는 질병을 신속하게 전달합니다.">
+  <meta property="og:description" content="전염병 알리미">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script type="text/javascript" src="selectBox.js"></script>
+  <script src="https://kit.fontawesome.com/29aad76e1f.js" crossorigin="anonymous"></script>
+    <script src="clock.js"></script>
+
+  <link rel="stylesheet" href="./css//index.css">
+  <style>
+    a:visited {color: #224ABE; text-decoration: none;}
+  </style>
+  <title>전염병알리미</title>
+</head>
+<body>
+  <nav id="navbar">
+    <h1 class="navbar-title">
+        <i class="fas fa-head-side-cough"></i>
+        전염병 알리미
+    </h1>
+  </nav>
+  <div id="sidebar">
+      <div>
+          <h3 class="clock"></h3>
+          <script>init();</script>
+          <h3 class="clock2"></h3>
+          <script>init2();</script>
+      </div>
+      <div class="sidebar-title">
+          <a href="./main.html" class="fontbold">
+              <font-w>메인 홈 화면</font-w>
+          </a>
+      </div>
+      <div class="sidebar-title2 fontbold">
+          <font-w>
+              국내
+          </font-w>
+      </div>
+      <li class="sidebar-item"><a href="./kocase.html">
+          <font-w>전염병확인자</font-w>
+      </a></li>
+      <li class="sidebar-item"><a href="./konews.html">
+          <font-w>뉴스</font-w>
+      </a></li>
+      <div class="sidebar-title2 fontbold">
+          <font-w>
+              해외
+          </font-w>
+      </div>
+      <li><a href="./wocase.html">
+          <font-w>전염병확인자</font-w>
+      </a></li>
+      <li class="sidebar-item"><a href="./wonews.html">
+          <font-w>뉴스</font-w>
+      </a></li>
+      <li class="sidebar-item"><a href="./wosearch.html">
+          <font-w>국가별 감염병 예방정보</font-w>
+      </a></li>
+      <div class="sidebar-title fontbold">
+          <a href="./safe.html">
+              <font-w>안전수칙 및 소식</font-w>
+          </a>
+      </div>
+  </div>
+  </div>
+  <div class="main-container">
+        <div id="container" class="container">
+                        <p><span>감염병 목록(감염병을 선택하세요)</span></p>
+                        <div class="infect_tab">
+                            <select onchange="if(this.value) location.href=(this.value);">
+                                <option value="">선택</option>
+                                <option value="./safe/B형 간염.html">B형 간염</a></option>
+                                <option value="./safe/A형 간염.html">A형 간염</option>
+                                <option value="./safe/C형 간염.html">C형 간염</option>
+                                <option value="./safe/공수병.html">공수병</option>
+                                <option value="./safe/노로바이러스 감염증.html">노로바이러스 감염증</option>
+                                <option value="./safe/뎅기열.html">뎅기열</option>
+                                <option value="./safe/동물인플루엔자 인체감염증(AI).html">동물인플루엔자 인체감염증(AI)</option>
+                                <option value="./safe/디프테리아.html">디프테리아</option>
+                                <option value="./safe/라싸열.html">라싸열</option>
+                                <option value="./safe/렙토스피라증.html">렙토스피라증</option>
+                                <option value="./safe/리스테리아감염증.html">리스테리아감염증</option>
+                                <option value="./safe/리프트밸리열.html">리프트밸리열</option>
+                                <option value="./safe/마버그열.html">마버그열</option>
+                                <option value="./safe/말라리아.html">말라리아</option>
+                                <option value="./safe/바이러스성 출혈열.html">바이러스성 출혈열</option>
+                                <option value="./safe/백일해.html">백일해</option>
+                                <option value="./safe/보툴리눔독소증.html">보툴리눔독소증</option>
+                                <option value="./safe/브루셀라증.html">브루셀라증</option>
+                                <option value="./safe/비브리오패혈증.html">비브리오패혈증</option>
+                                <option value="./safe/살모넬라감염증.html">살모넬라감염증</option>
+                                <option value="./safe/샤가스병.html">샤가스병</option>
+                                <option value="./safe/성홍열.html">성홍열</option>
+                                <option value="./safe/세균성이질.html">세균성이질</option>
+                                <option value="./safe/수두.html">수두</option>
+                                <option value="./safe/수막구균성수막염.html">수막구균성수막염</option>
+                                <option value="./safe/수족구병.html">수족구병</option>
+                                <option value="./safe/신종 인플루엔자.html">신종 인플루엔자</option>
+                                <option value="./safe/에볼라바이러스병.html">에볼라바이러스병</option>
+                                <option value="./safe/엔테로바이러스감염증.html">엔테로바이러스감염증</option>
+                                <option value="./safe/웨스트나일바이러스.html">웨스트나일바이러스</option>
+                                <option value="./safe/유비저.html">유비저</option>
+                                <option value="./safe/유행성이하선염.html">유행성이하선염</option>
+                                <option value="./safe/일본뇌염.html">일본뇌염</option>
+                                <option value="./safe/장독소성대장균 감염증.html">장독소성대장균 감염증</option>
+                                <option value="./safe/장출혈성대장균 감염증(ETEC).html">장출혈성대장균 감염증(ETEC)</option>
+                                <option value="./safe/장티푸스.html">장티푸스</option>
+                                <option value="./safe/주혈흡충증.html">주혈흡충증</option>
+                                <option value="./safe/중동호흡기증후군(MERS).html">중동호흡기증후군(MERS)</option>
+                                <option value="./safe/중증급성호흡기증후군(SARS).html">중증급성호흡기증후군(SARS)</option>
+                                <option value="./safe/지카바이러스감염증.html">지카바이러스감염증</option>
+                                <option value="./safe/치쿤구니야열.html">치쿤구니야열</option>
+                                <option value="./safe/코로나바이러스감염증-19.html">코로나바이러스감염증-19</option>
+                                <option value="./safe/콜레라.html">콜레라</option>
+                                <option value="./safe/큐열.html">큐열</option>
+                                <option value="./safe/크리미안콩고출혈열.html">크리미안콩고출혈열</option>
+                                <option value="./safe/탄저.html">탄저</option>
+                                <option value="./safe/페스트.html">페스트</option>
+                                <option value="./safe/폴리오.html">폴리오</option>
+                                <option value="./safe/풍진.html">풍진</option>
+                                <option value="./safe/한탄바이러스(신증후군출혈열).html">한탄바이러스(신증후군출혈열)</option>
+                                <option value="./safe/홍역.html">홍역</option>
+                                <option value="./safe/황열.html">황열</option>
+                            </select>
+                            <label for="Disease">감염병 선택</label>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
